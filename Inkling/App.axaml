@@ -1,15 +1,24 @@
 <Application xmlns="https://github.com/avaloniaui"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="clr-namespace:Inkling"
+	xmlns:views="clr-namespace:Inkling.Views"
+	xmlns:vm="clr-namespace:Inkling.ViewModels"
 	x:Class="Inkling.App"
-	xmlns:local="using:Inkling"
-	RequestedThemeVariant="Default">
-	<!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+	RequestedThemeVariant="Default"
+>
 
 	<Application.DataTemplates>
 		<local:ViewLocator/>
+		<DataTemplate DataType="{x:Type vm:HomeViewModel}">
+			<views:HomeView/>
+		</DataTemplate>
+		<DataTemplate DataType="{x:Type vm:ToolViewModel}">
+			<views:ToolView/>
+		</DataTemplate>
 	</Application.DataTemplates>
 
 	<Application.Styles>
 		<FluentTheme />
 	</Application.Styles>
 </Application>
+

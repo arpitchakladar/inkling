@@ -11,7 +11,9 @@
 
 	<Design.DataContext>
 		<!-- This only sets the DataContext for the previewer in an IDE,
-			to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+			to set the actual DataContext for runtime, set the DataContext
+			property in code (look at App.axaml.cs)
+		-->
 		<vm:MainWindowViewModel/>
 	</Design.DataContext>
 	<Grid>
@@ -20,19 +22,20 @@
 			<RowDefinition Height="*"/> <!-- ScrollViewer fills the rest -->
 		</Grid.RowDefinitions>
 
-		<!-- Title -->
-		<TextBlock Grid.Row="0" Text="Inkling"
-				FontSize="32"
-				HorizontalAlignment="Center"
-				Margin="0,20,0,20"/>
+		<TextBlock
+			Grid.Row="0"
+			Text="Inkling"
+			FontSize="32"
+			HorizontalAlignment="Center"
+			Margin="0,20,0,20"
+		/>
 
-		<!-- Grid of Buttons -->
-		<ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled"
+		<ScrollViewer
+			Grid.Row="1"
+			HorizontalScrollBarVisibility="Disabled"
 			VerticalScrollBarVisibility="Auto"
-			>
-			<WrapPanel x:Name="ToolsPanel" HorizontalAlignment="Center" VerticalAlignment="Center" ItemWidth="440" ItemHeight="440" />
+		>
+			<ContentControl Content="{Binding CurrentPage}" />
 		</ScrollViewer>
 	</Grid>
-	<!-- <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/> -->
-
 </Window>

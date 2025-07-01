@@ -1,0 +1,10 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:vm="clr-namespace:Inkling.ViewModels"
+	x:Class="Inkling.Views.ToolView"
+	x:DataType="vm:ToolViewModel"
+>
+	<Grid>
+		<Button Content="Go Back" Command="{Binding GoBack}" />
+	</Grid>
+</UserControl>
