@@ -4,11 +4,17 @@
 	x:Class="Inkling.Views.HomeView"
 	x:DataType="vm:HomeViewModel"
 >
-	<WrapPanel
-		x:Name="ToolsPanel"
-		HorizontalAlignment="Center"
-		VerticalAlignment="Center"
-		ItemWidth="440"
-		ItemHeight="440"
-	/>
+	<ItemsControl ItemsSource="{Binding ToolButtons}">
+		<ItemsControl.ItemsPanel>
+			<ItemsPanelTemplate>
+				<WrapPanel
+					x:Name="ToolsPanel"
+					HorizontalAlignment="Center"
+					VerticalAlignment="Center"
+					ItemWidth="440"
+					ItemHeight="440"
+				/>
+			</ItemsPanelTemplate>
+		</ItemsControl.ItemsPanel>
+	</ItemsControl>
 </UserControl>

@@ -5,6 +5,6 @@
 	x:DataType="vm:ToolViewModel"
 >
 	<Grid>
-		<Button Content="Go Back" Command="{Binding GoBack}" />
+		<Button Content="Go Back" Command="{Binding GoBackCommand}" />
 	</Grid>
 </UserControl>
