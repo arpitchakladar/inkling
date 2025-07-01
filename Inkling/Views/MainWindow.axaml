@@ -14,7 +14,25 @@
 			to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
 		<vm:MainWindowViewModel/>
 	</Design.DataContext>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/> <!-- Title -->
+			<RowDefinition Height="*"/> <!-- ScrollViewer fills the rest -->
+		</Grid.RowDefinitions>
 
-	<TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+		<!-- Title -->
+		<TextBlock Grid.Row="0" Text="Inkling"
+				FontSize="32"
+				HorizontalAlignment="Center"
+				Margin="0,20,0,20"/>
+
+		<!-- Grid of Buttons -->
+		<ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled"
+			VerticalScrollBarVisibility="Auto"
+			>
+			<WrapPanel x:Name="ToolsPanel" HorizontalAlignment="Center" VerticalAlignment="Center" ItemWidth="440" ItemHeight="440" />
+		</ScrollViewer>
+	</Grid>
+	<!-- <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/> -->
 
 </Window>
