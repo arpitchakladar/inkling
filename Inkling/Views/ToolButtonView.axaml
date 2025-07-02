@@ -7,33 +7,43 @@
 	<Border
 		Height="200"
 		Width="400"
+		Padding="40"
 		Background="Transparent"
 		BorderBrush="{Binding Tool.Color}"
 		BorderThickness="3"
 		CornerRadius="20"
+		BoxShadow="5 5 10 0 Gray"
 		PointerPressed="BorderPointerPressed"
 	>
 		<StackPanel
-			HorizontalAlignment="Center"
-			VerticalAlignment="Center"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
 		>
-			<Path
-				Data="M12,2A10,10 0 1 0 12,22A10,10 0 1 0 12,2Z"
-				Fill="{Binding Tool.Color}"
-				Width="24"
-				Height="24"
-			/>
-			<TextBlock
-				Text="{ Binding Tool.Name }"
-				FontWeight="Bold"
-				FontSize="16"
-				TextAlignment="Center"
-				Margin="0,5,0,0"
-			/>
+			<Grid
+				ColumnDefinitions="Auto,*"
+				Margin="0,0,0,10"
+				HorizontalAlignment="Stretch"
+			>
+				<Svg
+					Width="48"
+					Height="48"
+					Margin="0,0,10,0"
+					Path="{Binding Tool.Icon, StringFormat='/Assets/Icons/Tools/{0}'}"
+					Css="{Binding Tool.Color, StringFormat='path {{ fill: {0}; }}'}"
+				/>
+				<TextBlock Grid.Column="1"
+					Text="{Binding Tool.Name}"
+					FontWeight="Bold"
+					FontSize="24"
+					TextAlignment="Left"
+					VerticalAlignment="Center"
+				/>
+			</Grid>
 			<TextBlock
 				Text="{ Binding Tool.Description }"
-				FontSize="12"
-				TextAlignment="Center"
+				FontSize="16"
+				TextAlignment="Left"
+				TextWrapping="Wrap"
 			/>
 		</StackPanel>
 	</Border>
