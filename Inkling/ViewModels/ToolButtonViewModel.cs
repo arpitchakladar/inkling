@@ -1,4 +1,4 @@
-using System.Windows.Input;
+using System;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
@@ -8,11 +8,11 @@ namespace Inkling.ViewModels;
 
 public partial class ToolButtonViewModel : ViewModelBase
 {
-	public ICommand OpenToolCommand { get; init; }
+	public Action<Tool> OpenTool { get; init; }
 	public Tool Tool { get; init; }
 
-	public ToolButtonViewModel(Tool tool, ICommand openToolCommand) {
+	public ToolButtonViewModel(Tool tool, Action<Tool> openTool) {
 		Tool = tool;
-		OpenToolCommand = openToolCommand;
+		OpenTool = openTool;
 	}
 }

@@ -4,11 +4,22 @@
 	x:Class="Inkling.Views.ToolButtonView"
 	x:DataType="vm:ToolButtonViewModel"
 >
-	<Button Height="400" Width="400" Background="{Binding Tool.Color}" Command="{Binding OpenToolCommand}">
-		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+	<Border
+		Height="200"
+		Width="400"
+		Background="Transparent"
+		BorderBrush="{Binding Tool.Color}"
+		BorderThickness="3"
+		CornerRadius="20"
+		PointerPressed="BorderPointerPressed"
+	>
+		<StackPanel
+			HorizontalAlignment="Center"
+			VerticalAlignment="Center"
+		>
 			<Path
 				Data="M12,2A10,10 0 1 0 12,22A10,10 0 1 0 12,2Z"
-				Fill="Black"
+				Fill="{Binding Tool.Color}"
 				Width="24"
 				Height="24"
 			/>
@@ -25,5 +36,5 @@
 				TextAlignment="Center"
 			/>
 		</StackPanel>
-	</Button>
+	</Border>
 </UserControl>

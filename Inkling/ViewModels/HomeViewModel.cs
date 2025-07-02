@@ -1,5 +1,5 @@
-using System.Collections.ObjectModel;
 using System.Linq;
+using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
@@ -20,7 +20,7 @@ public partial class HomeViewModel : ViewModelBase
 		ToolButtons = new ObservableCollection<ToolButtonViewModel>(_main.Tools
 			.Select(tool => new ToolButtonViewModel(
 				tool,
-				new RelayCommand(() => OpenTool(tool))
+				OpenTool
 			))
 		);
 	}
