@@ -24,7 +24,7 @@
 
 		<TextBlock
 			Grid.Row="0"
-			Text="INKLING"
+			Text="{Binding Title}"
 			FontSize="32"
 			HorizontalAlignment="Center"
 			Margin="0,20,0,20"

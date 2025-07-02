@@ -1,35 +1,34 @@
 using System.Collections.ObjectModel;
+using System.Linq;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+
+using Inkling.Models;
 
 namespace Inkling.ViewModels;
 
 public partial class HomeViewModel : ViewModelBase
 {
 	private readonly MainWindowViewModel _main;
-	public ObservableCollection<ToolButtonViewModel> ToolButtons { get; } = new();
+	public ObservableCollection<ToolButtonViewModel> ToolButtons { get; init; }
 
 	public HomeViewModel(MainWindowViewModel main)
 	{
 		_main = main;
+		_main.Title = "INKLING";
 
-		AddToolButtons();
-	}
-
-	[RelayCommand]
-	public void OpenTool()
-	{
-		_main.NavigateTo(new ToolViewModel(_main));
-	}
-
-	private void AddToolButtons() {
-		foreach (var tool in _main.Tools)
-		{
-			ToolButtons.Add(new ToolButtonViewModel {
+		ToolButtons = new ObservableCollection<ToolButtonViewModel>(_main.Tools
+			.Select(tool => new ToolButtonViewModel
+			{
 				Name = tool.Name,
 				Description = tool.Description,
-				OpenToolCommand = OpenToolCommand,
-			});
-		}
+				OpenToolCommand = new RelayCommand(() => OpenTool(tool)),
+			})
+		);
+	}
+
+	public void OpenTool(Tool tool)
+	{
+		_main.NavigateTo(new ToolViewModel(_main, tool));
 	}
 }
