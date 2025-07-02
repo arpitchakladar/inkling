@@ -18,12 +18,10 @@ public partial class HomeViewModel : ViewModelBase
 		_main.Title = "INKLING";
 
 		ToolButtons = new ObservableCollection<ToolButtonViewModel>(_main.Tools
-			.Select(tool => new ToolButtonViewModel
-			{
-				Name = tool.Name,
-				Description = tool.Description,
-				OpenToolCommand = new RelayCommand(() => OpenTool(tool)),
-			})
+			.Select(tool => new ToolButtonViewModel(
+				tool,
+				new RelayCommand(() => OpenTool(tool))
+			))
 		);
 	}
 

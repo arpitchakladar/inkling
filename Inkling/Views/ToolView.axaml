@@ -15,28 +15,38 @@
 			Margin="0,0,0,20"
 			Command="{Binding GoBackCommand}"
 		/>
-		<Button
+		<Grid
 			HorizontalAlignment="Center"
 			Height="400"
 			Width="800"
 			Margin="0,0,0,20"
-			Command="{Binding GoBackCommand}"
 		>
+			<Rectangle
+				Fill="Transparent"
+				Stroke="{Binding Tool.Color}"
+				StrokeThickness="3"
+				StrokeDashArray="6,2"
+				RadiusX="20"
+				RadiusY="20"
+			/>
 			<StackPanel
 				HorizontalAlignment="Center"
 				VerticalAlignment="Center"
 			>
 				<TextBlock
-					Text="SELECT FILE"
-					FontSize="32"
 					HorizontalAlignment="Center"
-					Margin="0,20,0,20"
-				/>
+					VerticalAlignment="Center"
+					FontSize="24"
+					FontWeight="Bold"
+					Foreground="{Binding Tool.Color}"
+				>
+					DROP FILES HERE
+				</TextBlock>
 			</StackPanel>
-		</Button>
+		</Grid>
 		<Button
 			HorizontalAlignment="Center"
-			Content="{Binding ToolName}"
+			Content="{Binding Tool.Name}"
 			Padding="40,10"
 			Margin="0,0,0,20"
 			Command="{Binding GoBackCommand}"

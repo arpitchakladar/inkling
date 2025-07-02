@@ -21,16 +21,19 @@ public partial class MainWindowViewModel : ViewModelBase
 				Name = "Compress PDFs",
 				Description = "Compress PDFs to a smaller size.",
 				MultiFile = true,
+				Color = "#db3612",
 			},
 			new Tool {
 				Name = "Merge PDFs",
 				Description = "Merge PDFs into a single file.",
 				MultiFile = true,
+				Color = "#db9b12",
 			},
 			new Tool {
 				Name = "Split PDF",
 				Description = "Take the pages from a single PDF and create a new one.",
 				MultiFile = false,
+				Color = "#b7db12",
 			},
 		};
 		Title = "INKLING";

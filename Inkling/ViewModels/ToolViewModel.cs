@@ -8,14 +8,13 @@ namespace Inkling.ViewModels;
 public partial class ToolViewModel : ViewModelBase
 {
 	private readonly MainWindowViewModel _main;
-	private readonly Tool _tool;
-	public string ToolName => _tool.Name;
+	public Tool Tool { get; init; }
 
 	public ToolViewModel(MainWindowViewModel main, Tool tool)
 	{
 		_main = main;
-		_tool = tool;
-		_main.Title = ToolName;
+		Tool = tool;
+		_main.Title = Tool.Name;
 	}
 
 	[RelayCommand]

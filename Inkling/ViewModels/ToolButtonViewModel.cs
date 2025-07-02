@@ -2,11 +2,17 @@ using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
+using Inkling.Models;
+
 namespace Inkling.ViewModels;
 
 public partial class ToolButtonViewModel : ViewModelBase
 {
-	public required string Name { get; init; }
-	public required string Description { get; init; }
-	public required ICommand OpenToolCommand { get; init; }
+	public ICommand OpenToolCommand { get; init; }
+	public Tool Tool { get; init; }
+
+	public ToolButtonViewModel(Tool tool, ICommand openToolCommand) {
+		Tool = tool;
+		OpenToolCommand = openToolCommand;
+	}
 }
