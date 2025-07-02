@@ -4,7 +4,42 @@
 	x:Class="Inkling.Views.ToolView"
 	x:DataType="vm:ToolViewModel"
 >
-	<Grid>
-		<Button Content="Go Back" Command="{Binding GoBackCommand}" />
-	</Grid>
+	<StackPanel
+		HorizontalAlignment="Center"
+		Orientation="Vertical"
+	>
+		<Button
+			HorizontalAlignment="Center"
+			Content="GO BACK"
+			Padding="40,10"
+			Margin="0,0,0,20"
+			Command="{Binding GoBackCommand}"
+		/>
+		<Button
+			HorizontalAlignment="Center"
+			Height="400"
+			Width="800"
+			Margin="0,0,0,20"
+			Command="{Binding GoBackCommand}"
+		>
+			<StackPanel
+				HorizontalAlignment="Center"
+				VerticalAlignment="Center"
+			>
+				<TextBlock
+					Text="SELECT FILE"
+					FontSize="32"
+					HorizontalAlignment="Center"
+					Margin="0,20,0,20"
+				/>
+			</StackPanel>
+		</Button>
+		<Button
+			HorizontalAlignment="Center"
+			Content="{Binding ToolName}"
+			Padding="40,10"
+			Margin="0,0,0,20"
+			Command="{Binding GoBackCommand}"
+		/>
+	</StackPanel>
 </UserControl>

@@ -12,11 +12,24 @@ public partial class HomeViewModel : ViewModelBase
 	public HomeViewModel(MainWindowViewModel main)
 	{
 		_main = main;
+
+		AddToolButtons();
 	}
 
 	[RelayCommand]
 	public void OpenTool()
 	{
 		_main.NavigateTo(new ToolViewModel(_main));
+	}
+
+	private void AddToolButtons() {
+		foreach (var tool in _main.Tools)
+		{
+			ToolButtons.Add(new ToolButtonViewModel {
+				Name = tool.Name,
+				Description = tool.Description,
+				OpenToolCommand = OpenToolCommand,
+			});
+		}
 	}
 }

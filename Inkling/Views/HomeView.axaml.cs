@@ -14,20 +14,5 @@ public partial class HomeView : UserControl
 	public HomeView()
 	{
 		InitializeComponent();
-
-		this.DataContextChanged += (_, _) => AddToolButtons();
-	}
-
-	private void AddToolButtons()
-	{
-		var vm = this.DataContext as HomeViewModel;
-
-		if (vm is null)
-			return;
-
-		for (int i = 1; i <= 10; i++)
-		{
-			vm.ToolButtons.Add(new ToolButtonViewModel(i, vm.OpenToolCommand));
-		}
 	}
 }

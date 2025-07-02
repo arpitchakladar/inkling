@@ -24,7 +24,7 @@
 
 		<TextBlock
 			Grid.Row="0"
-			Text="Inkling"
+			Text="INKLING"
 			FontSize="32"
 			HorizontalAlignment="Center"
 			Margin="0,20,0,20"

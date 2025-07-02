@@ -6,15 +6,7 @@ namespace Inkling.ViewModels;
 
 public partial class ToolButtonViewModel : ViewModelBase
 {
-	public readonly int _id;
-	private readonly ICommand _openToolCommand;
-	public string Title => "Merge PDFs";
-	public string Description => "Merge multiple PDFs into a single PDF file.";
-	public ICommand OpenToolCommand => _openToolCommand;
-
-	public ToolButtonViewModel(int id, ICommand OpenToolCommand)
-	{
-		_id = id;
-		_openToolCommand = OpenToolCommand;
-	}
+	public required string Name { get; init; }
+	public required string Description { get; init; }
+	public required ICommand OpenToolCommand { get; init; }
 }
