@@ -12,7 +12,7 @@
 					HorizontalAlignment="Center"
 					VerticalAlignment="Center"
 					ItemWidth="440"
-					ItemHeight="440"
+					ItemHeight="240"
 				/>
 			</ItemsPanelTemplate>
 		</ItemsControl.ItemsPanel>
