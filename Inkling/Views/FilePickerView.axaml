@@ -4,24 +4,30 @@
 	x:Class="Inkling.Views.FilePickerView"
 	x:DataType="vm:FilePickerViewModel"
 >
-	<Grid
-		HorizontalAlignment="Center"
-		Height="400"
-		Width="800"
-		Margin="0,0,0,20"
+	<Button
+		CornerRadius="20"
+		Background="Transparent"
 	>
-		<Rectangle
-			Fill="Transparent"
-			Stroke="{Binding Color}"
-			StrokeThickness="3"
-			StrokeDashArray="6,2"
-			RadiusX="20"
-			RadiusY="20"
-		/>
-		<StackPanel
+		<Button.Styles>
+			<Style
+				Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter"
+			>
+				<Setter Property="Background" Value="Transparent"/>
+			</Style>
+		</Button.Styles>
+		<Grid
 			HorizontalAlignment="Center"
-			VerticalAlignment="Center"
+			Height="400"
+			Width="800"
 		>
+			<Rectangle
+				Fill="Transparent"
+				Stroke="{Binding Color}"
+				StrokeThickness="3"
+				StrokeDashArray="6,2"
+				RadiusX="20"
+				RadiusY="20"
+			/>
 			<TextBlock
 				HorizontalAlignment="Center"
 				VerticalAlignment="Center"
@@ -31,6 +37,6 @@
 			>
 				DROP FILES HERE
 			</TextBlock>
-		</StackPanel>
-	</Grid>
+		</Grid>
+	</Button>
 </UserControl>

@@ -11,12 +11,4 @@ public partial class ToolButtonView : UserControl
 	{
 		InitializeComponent();
 	}
-
-	private void BorderPointerPressed(object? _sender, PointerPressedEventArgs _e)
-	{
-		var vm = this.DataContext as ToolButtonViewModel;
-		if (vm is null)
-			return;
-		vm.OpenTool(vm.Tool);
-	}
 }

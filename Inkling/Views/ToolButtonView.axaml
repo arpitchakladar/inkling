@@ -4,17 +4,32 @@
 	x:Class="Inkling.Views.ToolButtonView"
 	x:DataType="vm:ToolButtonViewModel"
 >
-	<Border
+	<Button
 		Height="200"
 		Width="400"
 		Padding="40"
-		Background="Transparent"
+		Background="White"
 		BorderBrush="{Binding Tool.Color}"
 		BorderThickness="3"
 		CornerRadius="20"
-		BoxShadow="5 5 10 0 Gray"
-		PointerPressed="BorderPointerPressed"
+		Command="{Binding OpenToolCommand}"
 	>
+		<Button.Effect>
+			<DropShadowEffect
+				OffsetX="5"
+				OffsetY="5"
+				BlurRadius="10"
+				Color="Gray"
+			/>
+		</Button.Effect>
+		<Button.Styles>
+			<Style
+				Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter"
+			>
+				<Setter Property="Background" Value="White"/>
+				<Setter Property="BorderBrush" Value="{Binding Tool.Color}"/>
+			</Style>
+		</Button.Styles>
 		<StackPanel
 			HorizontalAlignment="Left"
 			VerticalAlignment="Top"
@@ -46,5 +61,5 @@
 				TextWrapping="Wrap"
 			/>
 		</StackPanel>
-	</Border>
+	</Button>
 </UserControl>
