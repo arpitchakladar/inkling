@@ -2,6 +2,5 @@
 
 namespace Inkling.ViewModels;
 
-public class ViewModelBase : ObservableObject
-{
-}
+public abstract class ViewModelBase : ObservableObject
+{}

@@ -9,6 +9,9 @@
 
 	<Application.DataTemplates>
 		<local:ViewLocator/>
+		<DataTemplate DataType="{x:Type vm:FilePickerViewModel}">
+			<views:FilePickerView/>
+		</DataTemplate>
 		<DataTemplate DataType="{x:Type vm:HomeViewModel}">
 			<views:HomeView/>
 		</DataTemplate>

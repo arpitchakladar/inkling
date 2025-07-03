@@ -9,7 +9,7 @@ namespace Inkling.ViewModels;
 public partial class HomeViewModel : ViewModelBase
 {
 	private readonly MainWindowViewModel _main;
-	public ToolButtonViewModel[] ToolButtons { get; init; }
+	public ToolButtonViewModel[] ToolButtons { get; }
 
 	public HomeViewModel(MainWindowViewModel main)
 	{

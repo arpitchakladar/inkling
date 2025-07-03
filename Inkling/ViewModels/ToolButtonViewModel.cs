@@ -8,8 +8,8 @@ namespace Inkling.ViewModels;
 
 public partial class ToolButtonViewModel : ViewModelBase
 {
-	public Action<Tool> OpenTool { get; init; }
-	public Tool Tool { get; init; }
+	public Action<Tool> OpenTool { get; }
+	public Tool Tool { get; }
 
 	public ToolButtonViewModel(Tool tool, Action<Tool> openTool) {
 		Tool = tool;

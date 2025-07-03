@@ -8,13 +8,15 @@ namespace Inkling.ViewModels;
 public partial class ToolViewModel : ViewModelBase
 {
 	private readonly MainWindowViewModel _main;
-	public Tool Tool { get; init; }
+	public Tool Tool { get; }
+	public FilePickerViewModel FilePicker { get; }
 
 	public ToolViewModel(MainWindowViewModel main, Tool tool)
 	{
 		_main = main;
+		_main.Title = tool.Name;
 		Tool = tool;
-		_main.Title = Tool.Name;
+		FilePicker = new FilePickerViewModel(tool.Color);
 	}
 
 	[RelayCommand]
