@@ -4,22 +4,17 @@ public abstract class Tool
 {
 	public string Name { get; }
 	public string Description { get; }
-	public bool MultiFile { get; }
 	public string Color { get; }
 	public string Icon { get; }
 
-	protected Tool
-		(
-			string name,
-			string description,
-			bool multiFile,
-			string color,
-			string icon
-		)
+	protected Tool(
+		string name,
+		string description,
+		string color,
+		string icon)
 	{
 		Name = name;
 		Description = description;
-		MultiFile = multiFile;
 		Color = color;
 		Icon = icon;
 	}
@@ -27,10 +22,10 @@ public abstract class Tool
 	// public abstract Task RunAsync
 	// (
 	// 	IEnumerable<string> inputFiles,
-	// 	string outputFolder,
+	// 	string outputPath, // Folder for multi file
 	// 	ToolOptions? options = null
 	// );
-	//
+
 	public static readonly Tool[] Tools = new Tool[]
 	{
 		new CompressPDFsTool(),

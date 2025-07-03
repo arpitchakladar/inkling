@@ -6,7 +6,6 @@ public sealed class MergePDFsTool: Tool
 		: base(
 			name: "Merge PDFs",
 			description: "Combine multiple PDF documents into a single, organized file. Ideal for merging reports, forms, or pages into one PDF.",
-			multiFile: true,
 			color: "#db9b12",
 			icon: "/Assets/Icons/Tools/paperclip-solid.svg"
 		)
