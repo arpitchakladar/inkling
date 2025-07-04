@@ -19,8 +19,8 @@ public partial class HomeViewModel : ViewModelBase
 		ToolButtons = Tool.Tools
 			.Select(tool => new ToolButtonViewModel(
 				tool,
-				OpenTool
-			))
+				OpenTool)
+			)
 			.ToArray();
 	}
 
