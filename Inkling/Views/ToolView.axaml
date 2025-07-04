@@ -1,6 +1,8 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+<UserControl
+	xmlns="https://github.com/avaloniaui"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:vm="clr-namespace:Inkling.ViewModels"
+	xmlns:views="clr-namespace:Inkling.Views"
 	x:Class="Inkling.Views.ToolView"
 	x:DataType="vm:ToolViewModel"
 >
@@ -13,15 +15,48 @@
 			Content="GO BACK"
 			Padding="40,10"
 			Margin="0,0,0,20"
+			Background="White"
+			BorderThickness="3"
+			BorderBrush="Black"
+			CornerRadius="20"
 			Command="{Binding GoBackCommand}"
-		/>
-		<ContentControl Content="{Binding FilePicker}" />
+		>
+			<Button.Styles>
+				<Style
+					Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter"
+				>
+					<Setter Property="Background" Value="White"/>
+					<Setter Property="BorderBrush" Value="Black"/>
+				</Style>
+			</Button.Styles>
+			<TextBlock
+				Text="GO BACK"
+				Foreground="Black"
+				FontWeight="Bold"
+			/>
+		</Button>
+		<views:FilePickerView DataContext="{Binding FilePicker}"/>
 		<Button
 			HorizontalAlignment="Center"
-			Content="{Binding Tool.Name}"
 			Padding="40,10"
-			Margin="0,0,0,20"
+			Margin="0,20,0,0"
 			Command="{Binding GoBackCommand}"
-		/>
+			Background="{Binding Tool.Color}"
+			BorderBrush="{Binding Tool.Color}"
+		>
+			<Button.Styles>
+				<Style
+					Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter"
+				>
+					<Setter Property="Background" Value="{Binding Tool.Color}"/>
+					<Setter Property="BorderBrush" Value="{Binding Tool.Color}"/>
+				</Style>
+			</Button.Styles>
+			<TextBlock
+				Text="{Binding Tool.Name}"
+				Foreground="White"
+				FontWeight="Bold"
+			/>
+		</Button>
 	</StackPanel>
 </UserControl>

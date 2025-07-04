@@ -1,16 +1,17 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+<UserControl
+	xmlns="https://github.com/avaloniaui"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:vm="clr-namespace:Inkling.ViewModels"
 	x:Class="Inkling.Views.ToolButtonView"
 	x:DataType="vm:ToolButtonViewModel"
 >
 	<Button
-		Height="200"
+		Height="240"
 		Width="400"
 		Padding="40"
 		Background="White"
 		BorderBrush="{Binding Tool.Color}"
-		BorderThickness="3"
+		BorderThickness="4"
 		CornerRadius="20"
 		Command="{Binding OpenToolCommand}"
 	>
