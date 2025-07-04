@@ -2,7 +2,9 @@ namespace Inkling.Models;
 
 public sealed class CompressPDFsTool: Tool
 {
-	public CompressPDFsTool()
+	public static CompressPDFsTool Instance { get; } = new();
+
+	private CompressPDFsTool()
 		: base(
 			name: "Compress PDFs",
 			description: "Reduce the file size of one or more PDF documents while preserving as much quality as possible. Ideal for sharing or saving storage space.",

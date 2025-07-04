@@ -2,6 +2,8 @@ namespace Inkling.Models;
 
 public sealed class SplitPDFTool: Tool
 {
+	public static SplitPDFTool Instance { get; } = new();
+
 	public SplitPDFTool()
 		: base(
 			name: "Split PDF",

@@ -2,6 +2,8 @@ namespace Inkling.Models;
 
 public sealed class MergePDFsTool: Tool
 {
+	public static MergePDFsTool Instance { get; } = new();
+
 	public MergePDFsTool()
 		: base(
 			name: "Merge PDFs",

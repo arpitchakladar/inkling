@@ -28,8 +28,8 @@ public abstract class Tool
 
 	public static readonly Tool[] Tools = new Tool[]
 	{
-		new CompressPDFsTool(),
-		new MergePDFsTool(),
-		new SplitPDFTool(),
+		CompressPDFsTool.Instance,
+		MergePDFsTool.Instance,
+		SplitPDFTool.Instance,
 	};
 }
