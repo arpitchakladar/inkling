@@ -35,7 +35,7 @@
 				FontWeight="Bold"
 			/>
 		</Button>
-		<views:FilePickerView DataContext="{Binding FilePicker}"/>
+		<ContentControl Content="{Binding RealToolViewModel}" />
 		<Button
 			HorizontalAlignment="Center"
 			Padding="40,10"
