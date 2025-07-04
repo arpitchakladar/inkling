@@ -19,7 +19,9 @@ public partial class ToolViewModel : ViewModelBase
 		Tool = tool;
 		RealToolViewModel = tool switch {
 			CompressPDFsTool => new CompressPDFsToolViewModel(),
-			_ => null,
+			// TODO: Complete this
+			MergePDFsTool => null,
+			SplitPDFTool => null,
 		};
 	}
 

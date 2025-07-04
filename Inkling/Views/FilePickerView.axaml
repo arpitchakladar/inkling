@@ -15,6 +15,16 @@
 			>
 				<Setter Property="Background" Value="Transparent"/>
 			</Style>
+			<Style
+				Selector="Button:focus /template/ ContentPresenter#PART_ContentPresenter"
+			>
+				<Setter Property="Background" Value="Transparent"/>
+			</Style>
+			<Style
+				Selector="Button:pressed /template/ ContentPresenter#PART_ContentPresenter"
+			>
+				<Setter Property="Background" Value="Transparent"/>
+			</Style>
 		</Button.Styles>
 		<Grid
 			HorizontalAlignment="Center"

@@ -28,6 +28,18 @@
 					<Setter Property="Background" Value="White"/>
 					<Setter Property="BorderBrush" Value="Black"/>
 				</Style>
+				<Style
+					Selector="Button:focus /template/ ContentPresenter#PART_ContentPresenter"
+				>
+					<Setter Property="Background" Value="White"/>
+					<Setter Property="BorderBrush" Value="Black"/>
+				</Style>
+				<Style
+					Selector="Button:pressed /template/ ContentPresenter#PART_ContentPresenter"
+				>
+					<Setter Property="Background" Value="White"/>
+					<Setter Property="BorderBrush" Value="Black"/>
+				</Style>
 			</Button.Styles>
 			<TextBlock
 				Text="GO BACK"
@@ -47,6 +59,18 @@
 			<Button.Styles>
 				<Style
 					Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter"
+				>
+					<Setter Property="Background" Value="{Binding Tool.Color}"/>
+					<Setter Property="BorderBrush" Value="{Binding Tool.Color}"/>
+				</Style>
+				<Style
+					Selector="Button:focus /template/ ContentPresenter#PART_ContentPresenter"
+				>
+					<Setter Property="Background" Value="{Binding Tool.Color}"/>
+					<Setter Property="BorderBrush" Value="{Binding Tool.Color}"/>
+				</Style>
+				<Style
+					Selector="Button:pressed /template/ ContentPresenter#PART_ContentPresenter"
 				>
 					<Setter Property="Background" Value="{Binding Tool.Color}"/>
 					<Setter Property="BorderBrush" Value="{Binding Tool.Color}"/>
