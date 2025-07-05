@@ -26,19 +26,7 @@
 		</Button.Effect>
 		<Button.Styles>
 			<Style
-				Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter"
-			>
-				<Setter Property="Background" Value="White"/>
-				<Setter Property="BorderBrush" Value="{Binding Tool.Color}"/>
-			</Style>
-			<Style
-				Selector="Button:focus /template/ ContentPresenter#PART_ContentPresenter"
-			>
-				<Setter Property="Background" Value="White"/>
-				<Setter Property="BorderBrush" Value="{Binding Tool.Color}"/>
-			</Style>
-			<Style
-				Selector="Button:pressed /template/ ContentPresenter#PART_ContentPresenter"
+				Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter, Button:focus /template/ ContentPresenter#PART_ContentPresenter, Button:pressed /template/ ContentPresenter#PART_ContentPresenter"
 			>
 				<Setter Property="Background" Value="White"/>
 				<Setter Property="BorderBrush" Value="{Binding Tool.Color}"/>

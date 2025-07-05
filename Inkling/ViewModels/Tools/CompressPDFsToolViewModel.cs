@@ -19,7 +19,7 @@ public partial class CompressPDFsToolViewModel : ToolViewModelBase
 	public CompressPDFsToolViewModel()
 	{
 		Options = new CompressPDFsToolOptions();
-		FilePicker = new FilePickerViewModel(CompressPDFsTool.Instance.Color);
+		FilePicker = new FilePickerViewModel();
 		CompressionQuality = new ChoiceBarViewModel(
 			"Compression Level",
 			new string[] { "Low", "Medium", "High" },

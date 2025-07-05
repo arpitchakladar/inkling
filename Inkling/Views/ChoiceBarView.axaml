@@ -2,6 +2,7 @@
 	xmlns="https://github.com/avaloniaui"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:vm="clr-namespace:Inkling.ViewModels"
+	xmlns:views="clr-namespace:Inkling.Views"
 	x:Class="Inkling.Views.ChoiceBarView"
 	x:DataType="vm:ChoiceBarViewModel"
 >
@@ -19,29 +20,15 @@
 						Margin="5"
 						Padding="10"
 						Width="200"
+						BorderThickness="3"
+						Command="{Binding Command}"
 						Background="{Binding BackgroundBrush}"
 						Foreground="{Binding ForegroundBrush}"
 						BorderBrush="Black"
-						BorderThickness="3"
-						Command="{Binding Command}"
 					>
 						<Button.Styles>
 							<Style
-								Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter"
-							>
-								<Setter Property="Background" Value="{Binding BackgroundBrush}"/>
-								<Setter Property="Foreground" Value="{Binding ForegroundBrush}"/>
-								<Setter Property="BorderBrush" Value="Black"/>
-							</Style>
-							<Style
-								Selector="Button:focus /template/ ContentPresenter#PART_ContentPresenter"
-							>
-								<Setter Property="Background" Value="{Binding BackgroundBrush}"/>
-								<Setter Property="Foreground" Value="{Binding ForegroundBrush}"/>
-								<Setter Property="BorderBrush" Value="Black"/>
-							</Style>
-							<Style
-								Selector="Button:pressed /template/ ContentPresenter#PART_ContentPresenter"
+								Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter, Button:focus /template/ ContentPresenter#PART_ContentPresenter, Button:pressed /template/ ContentPresenter#PART_ContentPresenter"
 							>
 								<Setter Property="Background" Value="{Binding BackgroundBrush}"/>
 								<Setter Property="Foreground" Value="{Binding ForegroundBrush}"/>

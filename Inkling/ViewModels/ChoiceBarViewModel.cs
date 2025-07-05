@@ -30,8 +30,7 @@ public partial class ChoiceBarViewModel : ViewModelBase
 			IsSelected ? Brushes.White : Brushes.Black;
 	}
 
-	[ObservableProperty]
-	private string _label;
+	public string Label { get; }
 	public ObservableCollection<ChoiceBarChoice> Choices { get; set; }
 	public string Choice => Choices.FirstOrDefault(c => c.IsSelected)?.Text;
 

@@ -33,7 +33,7 @@
 		>
 			<Rectangle
 				Fill="Transparent"
-				Stroke="{Binding Color}"
+				Stroke="Black"
 				StrokeThickness="3"
 				StrokeDashArray="6,2"
 				RadiusX="20"
@@ -44,7 +44,7 @@
 				VerticalAlignment="Center"
 				FontSize="24"
 				FontWeight="Bold"
-				Foreground="{Binding Color}"
+				Foreground="Black"
 			>
 				DROP FILES HERE
 			</TextBlock>
