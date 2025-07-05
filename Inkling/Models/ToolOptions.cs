@@ -1,4 +1,3 @@
 namespace Inkling.Models;
 
-public abstract class ToolOptions
-{}
+public abstract class ToolOptions { }

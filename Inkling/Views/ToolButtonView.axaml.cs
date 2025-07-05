@@ -1,6 +1,4 @@
 using Avalonia.Controls;
-using Avalonia.Input;
-
 using Inkling.ViewModels;
 
 namespace Inkling.Views;

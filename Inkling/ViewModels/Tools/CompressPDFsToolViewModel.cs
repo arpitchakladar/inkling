@@ -1,5 +1,4 @@
 using CommunityToolkit.Mvvm.ComponentModel;
-
 using Inkling.Models;
 using Inkling.ViewModels;
 
@@ -11,9 +10,8 @@ public partial class CompressPDFsToolViewModel : ToolViewModelBase
 	public override ToolOptions Options
 	{
 		get => _options;
-		protected set => SetProperty(
-			ref _options,
-			(CompressPDFsToolOptions) value);
+		protected set =>
+			SetProperty(ref _options, (CompressPDFsToolOptions)value);
 	}
 	public FilePickerViewModel FilePicker { get; }
 

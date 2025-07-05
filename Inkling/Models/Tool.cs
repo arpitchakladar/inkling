@@ -9,11 +9,7 @@ public abstract class Tool
 	public string Color { get; }
 	public string Icon { get; }
 
-	protected Tool(
-		string name,
-		string description,
-		string color,
-		string icon)
+	protected Tool(string name, string description, string color, string icon)
 	{
 		Name = name;
 		Description = description;

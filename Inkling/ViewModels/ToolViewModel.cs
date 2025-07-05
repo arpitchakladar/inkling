@@ -1,6 +1,5 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-
 using Inkling.Models;
 using Inkling.ViewModels.Tools;
 
@@ -17,7 +16,8 @@ public partial class ToolViewModel : ViewModelBase
 		_main = main;
 		_main.Title = tool.Name;
 		Tool = tool;
-		RealToolViewModel = tool switch {
+		RealToolViewModel = tool switch
+		{
 			CompressPDFsTool => new CompressPDFsToolViewModel(),
 			// TODO: Complete this
 			MergePDFsTool => null,
