@@ -9,7 +9,6 @@
 		<ItemsControl.ItemsPanel>
 			<ItemsPanelTemplate>
 				<WrapPanel
-					x:Name="ToolsPanel"
 					HorizontalAlignment="Center"
 					VerticalAlignment="Center"
 					ItemWidth="440"

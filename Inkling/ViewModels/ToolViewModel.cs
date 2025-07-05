@@ -1,6 +1,6 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Inkling.Models;
+using Inkling.Models.Tools;
 using Inkling.ViewModels.Tools;
 
 namespace Inkling.ViewModels;

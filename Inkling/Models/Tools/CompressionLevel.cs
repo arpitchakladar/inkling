@@ -1,4 +1,4 @@
-namespace Inkling.Models;
+namespace Inkling.Models.Tools;
 
 public enum CompressionLevel
 {

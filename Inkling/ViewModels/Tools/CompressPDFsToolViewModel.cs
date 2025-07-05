@@ -1,5 +1,5 @@
 using CommunityToolkit.Mvvm.ComponentModel;
-using Inkling.Models;
+using Inkling.Models.Tools;
 using Inkling.ViewModels;
 
 namespace Inkling.ViewModels.Tools;

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Inkling.Models;
+namespace Inkling.Models.Tools;
 
 public sealed class MergePDFsToolOptions : ToolOptions
 {

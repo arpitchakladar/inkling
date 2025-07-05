@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace Inkling.Models;
+namespace Inkling.Models.Tools;
 
 public sealed class CompressPDFsTool : Tool
 {

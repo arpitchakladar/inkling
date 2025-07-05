@@ -1,7 +1,7 @@
 using System.Linq;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Inkling.Models;
+using Inkling.Models.Tools;
 
 namespace Inkling.ViewModels;
 
