@@ -1,3 +1,5 @@
+using System.Threading.Tasks;
+
 namespace Inkling.Models;
 
 public sealed class MergePDFsTool: Tool
@@ -12,4 +14,10 @@ public sealed class MergePDFsTool: Tool
 			icon: "PaperClip"
 		)
 	{}
+
+	public override async Task RunAsync(ToolOptions? options)
+	{
+		if (options is not MergePDFsToolOptions mergeOptions)
+			return;
+	}
 }

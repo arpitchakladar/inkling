@@ -1,3 +1,5 @@
+using System.Threading.Tasks;
+
 namespace Inkling.Models;
 
 public sealed class SplitPDFTool: Tool
@@ -12,4 +14,10 @@ public sealed class SplitPDFTool: Tool
 			icon: "Scissors"
 		)
 	{}
+
+	public override async Task RunAsync(ToolOptions? options)
+	{
+		if (options is not SplitPDFToolOptions splitOptions)
+			return;
+	}
 }

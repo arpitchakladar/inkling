@@ -61,7 +61,7 @@
 			HorizontalAlignment="Center"
 			Padding="40,10"
 			Margin="0,20,0,0"
-			Command="{Binding GoBackCommand}"
+			Command="{Binding RunToolCommand}"
 			Background="{Binding Tool.Color}"
 			BorderBrush="{Binding Tool.Color}"
 		>

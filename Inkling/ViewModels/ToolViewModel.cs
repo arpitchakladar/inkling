@@ -30,4 +30,10 @@ public partial class ToolViewModel : ViewModelBase
 	{
 		_main.NavigateTo(new HomeViewModel(_main));
 	}
+
+	[RelayCommand]
+	public void RunTool()
+	{
+		Tool.RunAsync(RealToolViewModel.Options);
+	}
 }

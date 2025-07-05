@@ -1,3 +1,5 @@
+using System.Threading.Tasks;
+
 namespace Inkling.Models;
 
 public abstract class Tool
@@ -19,12 +21,7 @@ public abstract class Tool
 		Icon = icon;
 	}
 
-	// public abstract Task RunAsync
-	// (
-	// 	IEnumerable<string> inputFiles,
-	// 	string outputPath, // Folder for multi file
-	// 	ToolOptions? options = null
-	// );
+	public abstract Task RunAsync(ToolOptions? options = null);
 
 	public static readonly Tool[] Tools = new Tool[]
 	{

@@ -7,12 +7,19 @@ namespace Inkling.ViewModels.Tools;
 
 public partial class CompressPDFsToolViewModel : ToolViewModelBase
 {
-	[ObservableProperty]
-	public CompressPDFsToolOptions _options;
+	private CompressPDFsToolOptions _options;
+	public override ToolOptions Options
+	{
+		get => _options;
+		protected set => SetProperty(
+			ref _options,
+			(CompressPDFsToolOptions) value);
+	}
 	public FilePickerViewModel FilePicker { get; }
 
 	public CompressPDFsToolViewModel()
 	{
+		Options = new CompressPDFsToolOptions();
 		FilePicker = new FilePickerViewModel(CompressPDFsTool.Instance.Color);
 	}
 }

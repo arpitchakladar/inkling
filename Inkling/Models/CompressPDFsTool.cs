@@ -1,3 +1,5 @@
+using System.Threading.Tasks;
+
 namespace Inkling.Models;
 
 public sealed class CompressPDFsTool: Tool
@@ -12,4 +14,10 @@ public sealed class CompressPDFsTool: Tool
 			icon: "ArrowsPointingIn"
 		)
 	{}
+
+	public override async Task RunAsync(ToolOptions? options)
+	{
+		if (options is not CompressPDFsToolOptions compressOptions)
+			return;
+	}
 }
