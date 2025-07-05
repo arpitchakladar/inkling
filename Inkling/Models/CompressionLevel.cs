@@ -4,5 +4,5 @@ public enum CompressionLevel
 {
 	Low,
 	Medium,
-	High
+	High,
 }

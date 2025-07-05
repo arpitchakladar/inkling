@@ -1,7 +1,6 @@
 using System.Linq;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-
 using Inkling.Models;
 
 namespace Inkling.ViewModels;
@@ -16,11 +15,8 @@ public partial class HomeViewModel : ViewModelBase
 		_main = main;
 		_main.Title = "INKLING";
 
-		ToolButtons = Tool.Tools
-			.Select(tool => new ToolButtonViewModel(
-				tool,
-				OpenTool
-			))
+		ToolButtons = Tool
+			.Tools.Select(tool => new ToolButtonViewModel(tool, OpenTool))
 			.ToArray();
 	}
 

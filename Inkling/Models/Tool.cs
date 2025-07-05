@@ -1,3 +1,5 @@
+using System.Threading.Tasks;
+
 namespace Inkling.Models;
 
 public abstract class Tool
@@ -7,11 +9,7 @@ public abstract class Tool
 	public string Color { get; }
 	public string Icon { get; }
 
-	protected Tool(
-		string name,
-		string description,
-		string color,
-		string icon)
+	protected Tool(string name, string description, string color, string icon)
 	{
 		Name = name;
 		Description = description;
@@ -19,17 +17,12 @@ public abstract class Tool
 		Icon = icon;
 	}
 
-	// public abstract Task RunAsync
-	// (
-	// 	IEnumerable<string> inputFiles,
-	// 	string outputPath, // Folder for multi file
-	// 	ToolOptions? options = null
-	// );
+	public abstract Task RunAsync(ToolOptions? options = null);
 
 	public static readonly Tool[] Tools = new Tool[]
 	{
-		new CompressPDFsTool(),
-		new MergePDFsTool(),
-		new SplitPDFTool(),
+		CompressPDFsTool.Instance,
+		MergePDFsTool.Instance,
+		SplitPDFTool.Instance,
 	};
 }

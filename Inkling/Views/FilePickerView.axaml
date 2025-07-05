@@ -15,6 +15,16 @@
 			>
 				<Setter Property="Background" Value="Transparent"/>
 			</Style>
+			<Style
+				Selector="Button:focus /template/ ContentPresenter#PART_ContentPresenter"
+			>
+				<Setter Property="Background" Value="Transparent"/>
+			</Style>
+			<Style
+				Selector="Button:pressed /template/ ContentPresenter#PART_ContentPresenter"
+			>
+				<Setter Property="Background" Value="Transparent"/>
+			</Style>
 		</Button.Styles>
 		<Grid
 			HorizontalAlignment="Center"
@@ -23,7 +33,7 @@
 		>
 			<Rectangle
 				Fill="Transparent"
-				Stroke="{Binding Color}"
+				Stroke="Black"
 				StrokeThickness="3"
 				StrokeDashArray="6,2"
 				RadiusX="20"
@@ -34,7 +44,7 @@
 				VerticalAlignment="Center"
 				FontSize="24"
 				FontWeight="Bold"
-				Foreground="{Binding Color}"
+				Foreground="Black"
 			>
 				DROP FILES HERE
 			</TextBlock>

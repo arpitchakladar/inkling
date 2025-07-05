@@ -1,6 +1,7 @@
 namespace Inkling.Models;
 
-public sealed class CompressPDFsToolOptions: ToolOptions
+public sealed class CompressPDFsToolOptions : ToolOptions
 {
-	public required CompressionLevel CompressionLevel { get; init; }
+	public CompressionLevel CompressionLevel { get; init; } =
+		CompressionLevel.Medium;
 }

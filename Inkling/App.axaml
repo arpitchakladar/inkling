@@ -1,14 +1,19 @@
-<Application xmlns="https://github.com/avaloniaui"
+<Application
+	xmlns="https://github.com/avaloniaui"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:local="clr-namespace:Inkling"
 	xmlns:views="clr-namespace:Inkling.Views"
+	xmlns:toolsviews="clr-namespace:Inkling.Views.Tools"
 	xmlns:vm="clr-namespace:Inkling.ViewModels"
+	xmlns:toolsvm="clr-namespace:Inkling.ViewModels.Tools"
 	x:Class="Inkling.App"
-	RequestedThemeVariant="Default"
+	RequestedThemeVariant="Light"
 >
-
 	<Application.DataTemplates>
 		<local:ViewLocator/>
+		<DataTemplate DataType="{x:Type vm:ChoiceBarViewModel}">
+			<views:ChoiceBarView/>
+		</DataTemplate>
 		<DataTemplate DataType="{x:Type vm:FilePickerViewModel}">
 			<views:FilePickerView/>
 		</DataTemplate>
@@ -20,6 +25,9 @@
 		</DataTemplate>
 		<DataTemplate DataType="{x:Type vm:ToolButtonViewModel}">
 			<views:ToolButtonView/>
+		</DataTemplate>
+		<DataTemplate DataType="{x:Type toolsvm:CompressPDFsToolViewModel}">
+			<toolsviews:CompressPDFsToolView/>
 		</DataTemplate>
 	</Application.DataTemplates>
 

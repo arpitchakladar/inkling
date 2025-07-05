@@ -2,9 +2,9 @@ using Avalonia.Controls;
 
 namespace Inkling.Views;
 
-public partial class HomeView : UserControl
+public partial class ChoiceBarView : UserControl
 {
-	public HomeView()
+	public ChoiceBarView()
 	{
 		InitializeComponent();
 	}

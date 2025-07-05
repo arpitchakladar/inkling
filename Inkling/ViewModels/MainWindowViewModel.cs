@@ -1,6 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-
 using Inkling.Models;
 
 namespace Inkling.ViewModels;
@@ -8,14 +7,15 @@ namespace Inkling.ViewModels;
 public partial class MainWindowViewModel : ViewModelBase
 {
 	[ObservableProperty]
-	private ViewModelBase? currentPage;
+	private ViewModelBase? _currentPage;
+
 	[ObservableProperty]
-	private string title;
+	private string _title;
 
 	public MainWindowViewModel()
 	{
 		Title = "INKLING";
-		CurrentPage = new HomeViewModel(this);
+		NavigateTo(new HomeViewModel(this));
 	}
 
 	public void NavigateTo(ViewModelBase page)

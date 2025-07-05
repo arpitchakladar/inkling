@@ -1,6 +1,7 @@
 <UserControl
 	xmlns="https://github.com/avaloniaui"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:heroIcons="clr-namespace:HeroIconsAvalonia.Controls;assembly=HeroIconsAvalonia"
 	xmlns:vm="clr-namespace:Inkling.ViewModels"
 	xmlns:views="clr-namespace:Inkling.Views"
 	x:Class="Inkling.Views.ToolView"
@@ -9,10 +10,10 @@
 	<StackPanel
 		HorizontalAlignment="Center"
 		Orientation="Vertical"
+		Spacing="20"
 	>
 		<Button
 			HorizontalAlignment="Center"
-			Content="GO BACK"
 			Padding="40,10"
 			Margin="0,0,0,20"
 			Background="White"
@@ -23,40 +24,56 @@
 		>
 			<Button.Styles>
 				<Style
-					Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter"
+					Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter, Button:focus /template/ ContentPresenter#PART_ContentPresenter, Button:pressed /template/ ContentPresenter#PART_ContentPresenter"
 				>
 					<Setter Property="Background" Value="White"/>
 					<Setter Property="BorderBrush" Value="Black"/>
 				</Style>
 			</Button.Styles>
-			<TextBlock
-				Text="GO BACK"
-				Foreground="Black"
-				FontWeight="Bold"
-			/>
+			<StackPanel Orientation="Horizontal" Spacing="10">
+				<heroIcons:HeroIcon
+					Width="18"
+					Height="18"
+					Type="ArrowLeft"
+					Foreground="Black"
+				/>
+				<TextBlock
+					Text="GO BACK"
+					Foreground="Black"
+					FontWeight="Bold"
+				/>
+			</StackPanel>
 		</Button>
-		<views:FilePickerView DataContext="{Binding FilePicker}"/>
+		<ContentControl Content="{Binding RealToolViewModel}" />
 		<Button
 			HorizontalAlignment="Center"
 			Padding="40,10"
 			Margin="0,20,0,0"
-			Command="{Binding GoBackCommand}"
+			Command="{Binding RunToolCommand}"
 			Background="{Binding Tool.Color}"
 			BorderBrush="{Binding Tool.Color}"
 		>
 			<Button.Styles>
 				<Style
-					Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter"
+					Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter, Button:focus /template/ ContentPresenter#PART_ContentPresenter, Button:pressed /template/ ContentPresenter#PART_ContentPresenter"
 				>
 					<Setter Property="Background" Value="{Binding Tool.Color}"/>
 					<Setter Property="BorderBrush" Value="{Binding Tool.Color}"/>
 				</Style>
 			</Button.Styles>
-			<TextBlock
-				Text="{Binding Tool.Name}"
-				Foreground="White"
-				FontWeight="Bold"
-			/>
+			<StackPanel Orientation="Horizontal" Spacing="10">
+				<heroIcons:HeroIcon
+					Width="18"
+					Height="18"
+					Type="{Binding Tool.Icon}"
+					Foreground="White"
+				/>
+				<TextBlock
+					Text="{Binding Tool.Name}"
+					Foreground="White"
+					FontWeight="Bold"
+				/>
+			</StackPanel>
 		</Button>
 	</StackPanel>
 </UserControl>
