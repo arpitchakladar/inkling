@@ -7,10 +7,13 @@
 	xmlns:vm="clr-namespace:Inkling.ViewModels"
 	xmlns:toolsvm="clr-namespace:Inkling.ViewModels.Tools"
 	x:Class="Inkling.App"
-	RequestedThemeVariant="Default"
+	RequestedThemeVariant="Light"
 >
 	<Application.DataTemplates>
 		<local:ViewLocator/>
+		<DataTemplate DataType="{x:Type vm:ChoiceBarViewModel}">
+			<views:ChoiceBarView/>
+		</DataTemplate>
 		<DataTemplate DataType="{x:Type vm:FilePickerViewModel}">
 			<views:FilePickerView/>
 		</DataTemplate>

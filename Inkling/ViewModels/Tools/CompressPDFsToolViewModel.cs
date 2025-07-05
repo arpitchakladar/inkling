@@ -14,10 +14,16 @@ public partial class CompressPDFsToolViewModel : ToolViewModelBase
 			SetProperty(ref _options, (CompressPDFsToolOptions)value);
 	}
 	public FilePickerViewModel FilePicker { get; }
+	public ChoiceBarViewModel CompressionQuality { get; }
 
 	public CompressPDFsToolViewModel()
 	{
 		Options = new CompressPDFsToolOptions();
 		FilePicker = new FilePickerViewModel(CompressPDFsTool.Instance.Color);
+		CompressionQuality = new ChoiceBarViewModel(
+			"Compression Level",
+			new string[] { "Low", "Medium", "High" },
+			"Medium"
+		);
 	}
 }

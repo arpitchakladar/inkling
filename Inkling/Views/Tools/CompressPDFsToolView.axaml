@@ -7,5 +7,8 @@
 	x:Class="Inkling.Views.Tools.CompressPDFsToolView"
 	x:DataType="toolsvm:CompressPDFsToolViewModel"
 >
-	<views:FilePickerView DataContext="{Binding FilePicker}"/>
+	<StackPanel Spacing="20">
+		<views:FilePickerView DataContext="{Binding FilePicker}"/>
+		<views:ChoiceBarView DataContext="{Binding CompressionQuality}"/>
+	</StackPanel>
 </UserControl>
