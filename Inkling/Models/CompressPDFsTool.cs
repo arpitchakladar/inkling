@@ -9,7 +9,7 @@ public sealed class CompressPDFsTool: Tool
 			name: "Compress PDFs",
 			description: "Reduce the file size of one or more PDF documents while preserving as much quality as possible. Ideal for sharing or saving storage space.",
 			color: "#db3612",
-			icon: "/Assets/Icons/Tools/minimize-solid.svg"
+			icon: "ArrowsPointingIn"
 		)
 	{}
 }

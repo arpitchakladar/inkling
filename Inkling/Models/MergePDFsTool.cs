@@ -9,7 +9,7 @@ public sealed class MergePDFsTool: Tool
 			name: "Merge PDFs",
 			description: "Combine multiple PDF documents into a single, organized file. Ideal for merging reports, forms, or pages into one PDF.",
 			color: "#db9b12",
-			icon: "/Assets/Icons/Tools/paperclip-solid.svg"
+			icon: "PaperClip"
 		)
 	{}
 }

@@ -1,6 +1,7 @@
 <UserControl
 	xmlns="https://github.com/avaloniaui"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:heroIcons="clr-namespace:HeroIconsAvalonia.Controls;assembly=HeroIconsAvalonia"
 	xmlns:vm="clr-namespace:Inkling.ViewModels"
 	xmlns:views="clr-namespace:Inkling.Views"
 	x:Class="Inkling.Views.ToolView"
@@ -12,7 +13,6 @@
 	>
 		<Button
 			HorizontalAlignment="Center"
-			Content="GO BACK"
 			Padding="40,10"
 			Margin="0,0,0,20"
 			Background="White"
@@ -41,11 +41,20 @@
 					<Setter Property="BorderBrush" Value="Black"/>
 				</Style>
 			</Button.Styles>
-			<TextBlock
-				Text="GO BACK"
-				Foreground="Black"
-				FontWeight="Bold"
-			/>
+			<StackPanel Orientation="Horizontal">
+				<heroIcons:HeroIcon
+					Width="18"
+					Height="18"
+					Margin="0,0,10,0"
+					Type="ArrowLeft"
+					Foreground="Black"
+				/>
+				<TextBlock
+					Text="GO BACK"
+					Foreground="Black"
+					FontWeight="Bold"
+				/>
+			</StackPanel>
 		</Button>
 		<ContentControl Content="{Binding RealToolViewModel}" />
 		<Button
@@ -76,11 +85,20 @@
 					<Setter Property="BorderBrush" Value="{Binding Tool.Color}"/>
 				</Style>
 			</Button.Styles>
-			<TextBlock
-				Text="{Binding Tool.Name}"
-				Foreground="White"
-				FontWeight="Bold"
-			/>
+			<StackPanel Orientation="Horizontal">
+				<heroIcons:HeroIcon
+					Width="18"
+					Height="18"
+					Margin="0,0,10,0"
+					Type="{Binding Tool.Icon}"
+					Foreground="White"
+				/>
+				<TextBlock
+					Text="{Binding Tool.Name}"
+					Foreground="White"
+					FontWeight="Bold"
+				/>
+			</StackPanel>
 		</Button>
 	</StackPanel>
 </UserControl>

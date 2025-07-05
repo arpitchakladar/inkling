@@ -1,6 +1,7 @@
 <UserControl
 	xmlns="https://github.com/avaloniaui"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:heroIcons="clr-namespace:HeroIconsAvalonia.Controls;assembly=HeroIconsAvalonia"
 	xmlns:vm="clr-namespace:Inkling.ViewModels"
 	x:Class="Inkling.Views.ToolButtonView"
 	x:DataType="vm:ToolButtonViewModel"
@@ -52,12 +53,12 @@
 				Margin="0,0,0,10"
 				HorizontalAlignment="Stretch"
 			>
-				<Svg
+				<heroIcons:HeroIcon
 					Width="48"
 					Height="48"
 					Margin="0,0,10,0"
-					Path="{Binding Tool.Icon}"
-					Css="{Binding Tool.Color, StringFormat='path {{ fill: {0}; }}'}"
+					Type="{Binding Tool.Icon}"
+					Foreground="{Binding Tool.Color}"
 				/>
 				<TextBlock Grid.Column="1"
 					Text="{Binding Tool.Name}"
