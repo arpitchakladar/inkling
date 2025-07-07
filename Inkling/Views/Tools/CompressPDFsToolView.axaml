@@ -2,13 +2,17 @@
 	xmlns="https://github.com/avaloniaui"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:toolsvm="clr-namespace:Inkling.ViewModels.Tools"
+	xmlns:controls="clr-namespace:Inkling.Controls"
 	xmlns:views="clr-namespace:Inkling.Views"
 	xmlns:toolsviews="clr-namespace:Inkling.Views.Tools"
 	x:Class="Inkling.Views.Tools.CompressPDFsToolView"
 	x:DataType="toolsvm:CompressPDFsToolViewModel"
 >
 	<StackPanel Spacing="20">
-		<views:FilePickerView DataContext="{Binding FilePicker}"/>
+		<controls:FilePicker
+			Title="Select PDFs"
+			AllowMultiple="True"
+		/>
 		<views:ChoiceBarView DataContext="{Binding CompressionQuality}"/>
 	</StackPanel>
 </UserControl>

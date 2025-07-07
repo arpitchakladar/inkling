@@ -3,7 +3,9 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:heroIcons="clr-namespace:HeroIconsAvalonia.Controls;assembly=HeroIconsAvalonia"
 	xmlns:vm="clr-namespace:Inkling.ViewModels"
+	xmlns:toolsvm="clr-namespace:Inkling.ViewModels.Tools"
 	xmlns:views="clr-namespace:Inkling.Views"
+	xmlns:toolsviews="clr-namespace:Inkling.Views.Tools"
 	x:Class="Inkling.Views.ToolView"
 	x:DataType="vm:ToolViewModel"
 >
@@ -44,7 +46,7 @@
 				/>
 			</StackPanel>
 		</Button>
-		<ContentControl Content="{Binding RealToolViewModel}" />
+		<ContentControl Content="{Binding RealToolViewModel}"/>
 		<Button
 			HorizontalAlignment="Center"
 			Padding="40,10"
