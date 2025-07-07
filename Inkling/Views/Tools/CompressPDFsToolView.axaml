@@ -10,9 +10,13 @@
 >
 	<StackPanel Spacing="20">
 		<controls:FilePicker
-			Title="Select PDFs"
+			Label="Select PDFs"
 			AllowMultiple="True"
 		/>
-		<views:ChoiceBarView DataContext="{Binding CompressionQuality}"/>
+		<controls:ChoiceBar
+			Label="Compression Level"
+			Default="Medium"
+			Choices="Low,Medium,High"
+		/>
 	</StackPanel>
 </UserControl>

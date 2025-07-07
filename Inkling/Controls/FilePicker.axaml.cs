@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Avalonia;
 using Avalonia.Controls;
@@ -18,9 +17,9 @@ public partial class FilePicker : UserControl
 			nameof(AllowMultiple),
 			false
 		);
-	public static readonly StyledProperty<string> TitleProperty =
+	public static readonly StyledProperty<string> LabelProperty =
 		AvaloniaProperty.Register<FilePicker, string>(
-			nameof(Title),
+			nameof(Label),
 			"Select File"
 		);
 	public static readonly StyledProperty<
@@ -38,10 +37,10 @@ public partial class FilePicker : UserControl
 		get => GetValue(SelectedPathProperty);
 		set => SetValue(SelectedPathProperty, value);
 	}
-	public string Title
+	public string Label
 	{
-		get => GetValue(TitleProperty);
-		set => SetValue(TitleProperty, value);
+		get => GetValue(LabelProperty);
+		set => SetValue(LabelProperty, value);
 	}
 	public bool AllowMultiple
 	{
@@ -71,7 +70,7 @@ public partial class FilePicker : UserControl
 		var files = await topLevel.StorageProvider.OpenFilePickerAsync(
 			new FilePickerOpenOptions
 			{
-				Title = this.Title,
+				Title = this.Label,
 				AllowMultiple = AllowMultiple,
 				FileTypeFilter = this.FileTypes,
 			}

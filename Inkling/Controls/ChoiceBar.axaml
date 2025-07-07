@@ -1,29 +1,29 @@
 <UserControl
 	xmlns="https://github.com/avaloniaui"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	xmlns:vm="clr-namespace:Inkling.ViewModels"
-	xmlns:views="clr-namespace:Inkling.Views"
-	x:Class="Inkling.Views.ChoiceBarView"
-	x:DataType="vm:ChoiceBarViewModel"
+	xmlns:controls="clr-namespace:Inkling.Controls"
+	x:Class="Inkling.Controls.ChoiceBar"
+	x:DataType="controls:ChoiceBar"
 >
 	<StackPanel Spacing="10">
 		<TextBlock
-			Text="{Binding Label}"
+			Text="{Binding Label, RelativeSource={RelativeSource AncestorType={x:Type controls:ChoiceBar}}}"
 			TextAlignment="Center"
 			FontSize="24"
 			FontWeight="Bold"
 		/>
-		<ItemsControl ItemsSource="{Binding Choices}">
+		<ItemsControl ItemsSource="{Binding ChoicesArray, RelativeSource={RelativeSource AncestorType={x:Type controls:ChoiceBar}}}">
 			<ItemsControl.ItemTemplate>
-				<DataTemplate x:DataType="vm:ChoiceBarViewModel+ChoiceBarChoice">
+				<DataTemplate x:DataType="controls:ChoiceBar+ChoiceBarChoice">
 					<Button
 						Margin="5"
 						Padding="10"
 						Width="200"
 						BorderThickness="3"
-						Command="{Binding Command}"
 						Background="{Binding BackgroundBrush}"
 						Foreground="{Binding ForegroundBrush}"
+						Click="OnChooseOption"
+						Tag="{Binding Text}"
 						BorderBrush="Black"
 					>
 						<Button.Styles>

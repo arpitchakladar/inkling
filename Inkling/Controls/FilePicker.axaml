@@ -46,7 +46,7 @@
 				FontSize="24"
 				FontWeight="Bold"
 				Foreground="Black"
-				Text="{Binding Title, RelativeSource={RelativeSource AncestorType={x:Type controls:FilePicker}}}"
+				Text="{Binding Label, RelativeSource={RelativeSource AncestorType={x:Type controls:FilePicker}}}"
 			/>
 		</Grid>
 	</Button>

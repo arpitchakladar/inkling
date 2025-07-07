@@ -13,15 +13,9 @@ public partial class CompressPDFsToolViewModel : ToolViewModelBase
 		protected set =>
 			SetProperty(ref _options, (CompressPDFsToolOptions)value);
 	}
-	public ChoiceBarViewModel CompressionQuality { get; }
 
 	public CompressPDFsToolViewModel()
 	{
 		Options = new CompressPDFsToolOptions();
-		CompressionQuality = new ChoiceBarViewModel(
-			"Compression Level",
-			new string[] { "Low", "Medium", "High" },
-			"Medium"
-		);
 	}
 }
